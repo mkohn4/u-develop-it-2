@@ -54,7 +54,7 @@ app.get('/api/candidates', (req,res) => {
             return;
         }
         res.json({
-            message: 'success',
+            message: 'success1',
             data: rows
         });
     });
@@ -113,11 +113,11 @@ app.post('/api/candidate', ({body}, res) => {
     }
 
     const sql = `INSERT INTO candidates (first_name, last_name, industry_connected)
-                VALUES (?,?,?,?)`;
+                VALUES (?,?,?)`;
     const params = [body.first_name, body.last_name, body.industry_connected];
 
     db.query(sql, params, (err, result) => {
-        if (err) {
+        if (err) {s
             res.status(400).json({ error: err.message});
             return;
         }
